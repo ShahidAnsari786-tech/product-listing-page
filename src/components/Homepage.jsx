@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { IoArrowBackCircle } from "react-icons/io5";
+import Image from 'next/image';
 
 
 // Homepage component
@@ -90,10 +91,10 @@ const Homepage = () => {
             >
               <div className="block border-4 dark:border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                 <div className="p-2 dark:bg-stone-800">
-                  <h2 className="text-base font-semibold dark:text-gray-100">Women's Clothing</h2>
+                  <h2 className="text-base font-semibold dark:text-gray-100">Women&apos;s Clothing</h2>
                 </div>
                 <hr className=" dark:border-stone-800" />
-                <img
+                <Image 
                   src="/images/women.jpg"
                   alt="Women's Clothing"
                   className="w-full h-48 md:h-80 object-cover"
@@ -108,10 +109,10 @@ const Homepage = () => {
             >
               <div className="block border-4 dark:border-stone-400 rounded-lg md:rounded-2xl overflow-hidden shadow-lg hover:border-2 hover:border-stone-800 transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
                 <div className="p-2 dark:bg-stone-800">
-                  <h2 className="text-base font-semibold  dark:text-gray-100">Men's Clothing</h2>
+                  <h2 className="text-base font-semibold  dark:text-gray-100">Men&apos;s Clothing</h2>
                 </div>
                 <hr className="border-stone-900" />
-                <img
+                <Image 
                   src="/images/men.jpg"
                   alt="Men's Clothing"
                   className="w-full h-48 md:h-80  object-cover"
@@ -129,7 +130,7 @@ const Homepage = () => {
                   <h2 className="text-base font-semibold text-gray-800 dark:text-gray-100">Jewelery</h2>
                 </div>
                 <hr className=" dark:border-stone-800" />
-                <img
+                <Image 
                   src="/images/jwelery.jpg"
                   alt="Jewelry"
                   className="w-full h-48 md:h-80 object-cover"
@@ -147,7 +148,7 @@ const Homepage = () => {
                   <h2 className="text-base font-semibold text-gray-800 dark:text-gray-100">Electronics</h2>
                 </div>
                 <hr className="dark:border-stone-800" />
-                <img
+                <Image 
                   src="/images/electronics.jpg"
                   alt="Electronics"
                   className="w-full h-48 md:h-80 object-cover"
@@ -182,7 +183,7 @@ const Homepage = () => {
               // Render products once data is fetched
               products.map((product, index) => (
                 <div key={index} className="flex-col bg-gradient-to-b p-2 from-gray-100 cursor-pointer via-stone-200 to-gray-400 border-4 border-solid border-stone-300 hover:border-stone-400 rounded-lg md:rounded-2xl shadow-xl">
-                  <img
+                  <Image 
                     src={product.image}
                     alt={product.title}
                     className="w-full h-60 rounded-lg md:rounded-2xl object-fill"

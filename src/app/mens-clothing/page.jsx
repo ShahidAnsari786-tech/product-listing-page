@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from "@/components/Footer";
 import { IoArrowBackCircle } from "react-icons/io5";
+import Image from 'next/image';
 
 const MensClothing = () => {
   const [products, setProducts] = useState([]);
@@ -50,7 +51,7 @@ const MensClothing = () => {
       className='bg-stone-700 w-[125px] flex text-gray-300 hover:bg-stone-800 drop-shadow-lg px-4 py-2 rounded-full mb-4'>
         <IoArrowBackCircle className="mr-2 animate-spin text-2xl text-lime-400" />
         Go Back</button>
-      <h1 className="text-xl font-bold text-stone-800 mb-4">Men's Clothing</h1>
+      <h1 className="text-xl font-bold text-stone-800 mb-4">Men&apos;s Clothing</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loading ? ( // Conditional rendering based on loading state
           // Skeleton loader while loading
@@ -68,7 +69,7 @@ const MensClothing = () => {
             className="flex-col bg-gradient-to-b p-2 from-gray-100  cursor-pointer  via-stone-200 to-gray-400 border-4 border-solid border-stone-300 hover:border-stone-400 rounded-lg md:rounded-2xl shadow-xl" 
             href={`/product/${product.id}`}>
               
-                <img 
+                <Image 
                   src={product.image} 
                   alt={product.title} 
                   className="w-full h-60 rounded-lg md:rounded-2xl object-fill" />

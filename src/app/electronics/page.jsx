@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import axios from 'axios';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -69,7 +70,7 @@ const Electronics = () => {
             className="flex-col bg-gradient-to-b p-2 from-gray-100  cursor-pointer via-stone-200 to-gray-400 border-4 border-solid border-stone-300 hover:border-stone-400 rounded-lg md:rounded-2xl shadow-xl" 
             href={`/product/${product.id}`}>
               
-                <img 
+                <Image 
                   src={product.image} 
                   alt={product.title} 
                   className="w-full h-60 rounded-lg md:rounded-2xl object-fill" />

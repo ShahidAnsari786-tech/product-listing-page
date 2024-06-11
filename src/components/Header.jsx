@@ -6,6 +6,7 @@ import { FcElectronics } from "react-icons/fc";
 import { GiDiamondRing } from "react-icons/gi";
 import axios from 'axios';
 import Ripples from 'react-ripples';
+import Image from 'next/image';
 
 
 const Header = () => {
@@ -82,7 +83,7 @@ const Header = () => {
             <div className="absolute flex-col left-0 right-0 mt-2 h-[50vh] overflow-hidden overflow-scroll  overflow-x-hidden scroll-smooth overflow-scroll-y dark:bg-stone-600  border border-gray-200 dark:border-gray-800 rounded-lg shadow-md z-50">
               {searchResults.map((product, index) => (
                 <div key={index} className="p-2 flex divide-x divide-lime-600 items-center hover:rounded-lg dark:hover:bg-gray-800 border border-stone-700">
-                  <img src={product.image} alt={product.title} className="flex w-9 h-auto mr-2 object-cover" />
+                  <Image src={product.image} alt={product.title} className="flex w-9 h-auto mr-2 object-cover" />
                    <div className='p-3'>
                     <p className="flex text-sm text-gray-200 font-semibold">{product.title}</p>
                     <p className=" flex text-xs text-blue-300">in {product.category}</p>
@@ -112,12 +113,12 @@ const Header = () => {
               <div className="absolute flex top-12 right-1 dark:bg-stone-600 divide-x divide-lime-500 outline outline-1 outline-white border-2 border-stone-600 rounded-2xl drop-shadow shadow-xl">
                 <Ripples>
                 <Link href="/mens-clothing" className="flex px-2 py-2 text-sm dark:text-gray-300 hover:text-white dark:hover:bg-lime-600 hover:rounded-l-2xl">
-                  Men's Clothing
+                  Men&apos;s Clothing
                 </Link>
                 </Ripples>
                 <Ripples>
                 <Link href="/womens-clothing" className="flex px-2 py-2 text-sm dark:text-gray-300 hover:text-white dark:hover:bg-lime-600">
-                  Women's Clothing
+                  Women&apos;s Clothing
                 </Link>
                 </Ripples>
                 <Ripples>
@@ -166,11 +167,11 @@ const Header = () => {
                   <div className='bg-stone-800 border border-gray-100 mt-2 divide-y rounded-md divide-solid divide-gray-600'>
                   <Link href="/mens-clothing" className="flex justify-around block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300 hover:rounded-t-md">
                   <FaMale className=' h-5 w-6 left-0 text-gray-400'/>
-                    Men's Clothing
+                    Men&apos;s Clothing
                   </Link>
                   <Link href="/womens-clothing" className="flex justify-around block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300">
                   <FaFemale className='h-5 w-6 left-0 text-gray-400'/>
-                    Women's Clothing
+                    Women&apos;s Clothing
                   </Link>
                   <Link href="/electronics" className="flex justify-evenly block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300">
                   <FcElectronics className='h-5 w-6 left-0'/> 
