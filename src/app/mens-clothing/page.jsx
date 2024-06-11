@@ -68,11 +68,13 @@ const MensClothing = () => {
             <Link key={product.id} 
             className="flex-col bg-gradient-to-b p-2 from-gray-100  cursor-pointer  via-stone-200 to-gray-400 border-4 border-solid border-stone-300 hover:border-stone-400 rounded-lg md:rounded-2xl shadow-xl" 
             href={`/product/${product.id}`}>
-              
+              <div className="relative w-full h-60">
                 <Image 
                   src={product.image} 
-                  alt={product.title} 
-                  className="w-full h-60 rounded-lg md:rounded-2xl object-fill" />
+                  alt={product.title}
+                  fill 
+                  className=" rounded-lg object-fill md:rounded-2xl" />
+               </div>
                 <h2 className="text-md font-semibold px-1 mt-4 mb-4">{product.title}</h2>
                 <h5 className='text-indigo-900 px-1 font-semibold text-base underline decoration-pink-600 mb-2'>Product Description</h5>
                 <p className="dark:text-blue-900 px-1 text-sm overflow-hidden display-inline">{product.description}</p>

@@ -55,7 +55,7 @@ const Homepage = () => {
                       src="/images/women.jpg"
                       alt="Women's Clothing"
                       fill
-                      objectFit="cover"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -76,7 +76,7 @@ const Homepage = () => {
                       src="/images/men.jpg"
                       alt="Men's Clothing"
                       fill
-                      objectFit="cover"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -97,7 +97,7 @@ const Homepage = () => {
                       src="/images/jwelery.jpg"
                       alt="Jewelery"
                       fill
-                      objectFit="cover"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const Homepage = () => {
                       src="/images/electronics.jpg"
                       alt="Electronics"
                       fill
-                      objectFit="cover"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -154,8 +154,7 @@ const Homepage = () => {
                         src={product.image}
                         alt={product.title}
                         fill
-                        objectFit="cover"
-                        className="rounded-lg md:rounded-2xl"
+                        className="rounded-lg object-fill md:rounded-2xl"
                       />
                     </div>
                     <h3 className="text-md font-semibold px-1 mt-4 mb-4">{product.title}</h3>
