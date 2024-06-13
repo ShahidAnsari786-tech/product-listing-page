@@ -45,11 +45,11 @@ const Homepage = () => {
                 onClick={() => fetchProducts("women's clothing")}
                 className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-6"
               >
-                <div className="block border-4 dark:border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                  <div className="p-2 dark:bg-stone-800">
-                    <h2 className="text-base font-semibold dark:text-gray-100">Women&apos;s Clothing</h2>
+                <div className="block border-4 border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                  <div className="p-2 bg-stone-800">
+                    <h2 className="text-base font-semibold text-gray-100">Women&apos;s Clothing</h2>
                   </div>
-                  <hr className="dark:border-stone-800" />
+                  <hr className="border-stone-800" />
                   <div className="relative w-full h-48 md:h-80">
                     <Image 
                       src="/images/women.jpg"
@@ -66,11 +66,11 @@ const Homepage = () => {
                 onClick={() => fetchProducts("men's clothing")}
                 className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-6"
               >
-                <div className="block border-4 dark:border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                  <div className="p-2 dark:bg-stone-800">
-                    <h2 className="text-base font-semibold dark:text-gray-100">Men&apos;s Clothing</h2>
+                <div className="block border-4 border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                  <div className="p-2 bg-stone-800">
+                    <h2 className="text-base font-semibold text-gray-100">Men&apos;s Clothing</h2>
                   </div>
-                  <hr className="dark:border-stone-800" />
+                  <hr className="border-stone-800" />
                   <div className="relative w-full h-48 md:h-80">
                     <Image 
                       src="/images/men.jpg"
@@ -87,11 +87,11 @@ const Homepage = () => {
                 onClick={() => fetchProducts("jewelery")}
                 className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-6"
               >
-                <div className="block border-4 dark:border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                  <div className="p-2 dark:bg-stone-800">
-                    <h2 className="text-base font-semibold dark:text-gray-100">Jewelery</h2>
+                <div className="block border-4 border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                  <div className="p-2 bg-stone-800">
+                    <h2 className="text-base font-semibold text-gray-100">Jewelery</h2>
                   </div>
-                  <hr className="dark:border-stone-800" />
+                  <hr className="border-stone-800" />
                   <div className="relative w-full h-48 md:h-80">
                     <Image 
                       src="/images/jwelery.jpg"
@@ -108,11 +108,11 @@ const Homepage = () => {
                 onClick={() => fetchProducts("electronics")}
                 className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-6"
               >
-                <div className="block border-4 dark:border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
-                  <div className="p-2 dark:bg-stone-800">
-                    <h2 className="text-base font-semibold dark:text-gray-100">Electronics</h2>
+                <div className="block border-4 border-stone-400 rounded-lg md:rounded-2xl hover:border-2 hover:border-stone-800 overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-transform duration-300">
+                  <div className="p-2 bg-stone-800">
+                    <h2 className="text-base font-semibold text-gray-100">Electronics</h2>
                   </div>
-                  <hr className="dark:border-stone-800" />
+                  <hr className="border-stone-800" />
                   <div className="relative w-full h-48 md:h-80">
                     <Image 
                       src="/images/electronics.jpg"
@@ -139,7 +139,7 @@ const Homepage = () => {
               {loading ? (
                 // Skeleton loader while loading
                 Array.from({ length: 8 }).map((_, index) => (
-                  <div key={index} className="dark:bg-stone-600 p-1 md:rounded-2xl rounded-lg shadow-lg">
+                  <div key={index} className="bg-stone-600 p-1 md:rounded-2xl rounded-lg shadow-lg">
                     <div className="w-full h-60 bg-gray-300 animate-pulse mb-2"></div>
                     <div className="h-6 bg-gray-300 animate-pulse mb-2"></div>
                     <div className="h-6 bg-gray-300 animate-pulse"></div>
@@ -159,7 +159,7 @@ const Homepage = () => {
                     </div>
                     <h3 className="text-md font-semibold px-1 mt-4 mb-4">{product.title}</h3>
                     <h5 className='text-indigo-900 px-1 font-semibold text-base underline decoration-pink-600 mb-2'>Product Description</h5>
-                    <p className="dark:text-blue-900 px-1 text-sm overflow-hidden display-inline ">{product.description}</p>
+                    <p className="text-blue-900 px-1 text-sm overflow-hidden display-inline ">{product.description}</p>
                     <p className="text-base text-pink-700 px-1 font-semibold mt-2"><span className='mr-1 font-semibold text-base text-stone-800'>Price </span>${product.price}</p>
                   </div>
                 ))

@@ -54,7 +54,7 @@ const Header = () => {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full shadow-sm bg-zinc-800 bg-opacity-90 rounded-b-md bg-transparent backdrop-filter backdrop-blur-[2px] dark:border-bg dark:border-gray-800">
+    <header className="sticky top-0 z-50 w-full shadow-sm bg-zinc-800 bg-opacity-90 rounded-b-md bg-transparent backdrop-filter backdrop-blur-[2px] border-gray-800">
       <div className="container flex items-center justify-between gap-2 h-28 md:h-16 px-4 md:px-6">
         
         {/* Logo and home link */}
@@ -67,28 +67,38 @@ const Header = () => {
         {/* Search Bar */}
         <div className="flex-1 max-w-md relative">
           <form>
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <input
               type="search"
               id="searching"
               name="find"
               placeholder="Search products..."
-              className="pl-10 w-full h-10 rounded-md focus:outline-none focus:border-4 focus:rounded-md focus:border-w-1 focus:border-double dark:border-gray-300 bg-stone-600 dark:text-gray-50"
+              className="pl-10 w-full h-10 rounded-md focus:outline-none focus:border-4 focus:rounded-md focus:border-w-1 focus:border-double border-gray-300 bg-stone-600 text-gray-50"
               value={searchTerm}
               onChange={handleChange}
             />
           </form>
           {/* Show search suggestions */}
           {searchTerm && (
-            <div className="absolute flex-col left-0 right-0 mt-2 h-[50vh] overflow-hidden overflow-scroll  overflow-x-hidden scroll-smooth overflow-scroll-y dark:bg-stone-600  border border-gray-200 dark:border-gray-800 rounded-lg shadow-md z-50">
+            <div className="absolute flex-col left-0 right-0 mt-2 h-[50vh] overflow-hidden overflow-scroll  overflow-x-hidden scroll-smooth overflow-scroll-y bg-stone-600  border border-stone-500  rounded-lg shadow-lg z-50">
               {searchResults.map((product, index) => (
-                <div key={index} className="p-2 flex divide-x divide-lime-600 items-center hover:rounded-lg dark:hover:bg-gray-800 border border-stone-700">
-                  <Image src={product.image} alt={product.title} className="flex w-9 h-auto mr-2 object-cover" />
-                   <div className='p-3'>
-                    <p className="flex text-sm text-gray-200 font-semibold">{product.title}</p>
-                    <p className=" flex text-xs text-blue-300">in {product.category}</p>
-                  </div>
-                </div>
+                 <div 
+                 key={index} 
+                 className="p-2 relative flex items-center divide-x divide-lime-600 hover:rounded-lg hover:bg-gray-800 border border-stone-700"
+               >
+                 <div className="relative flex-shrink-0 w-[70px] h-[70px] mr-3"> 
+                   <Image 
+                     src={product.image} 
+                     fill // Use layout="fill" for next/image to fill the container
+                     alt={product.title} 
+                     className="object-fill rounded-md md:rounded-lg" 
+                   />
+                 </div>
+                 <div className="p-3">
+                   <p className="text-sm text-gray-200 font-semibold">{product.title}</p>
+                   <p className="text-xs text-blue-300">in {product.category}</p>
+                 </div>
+               </div>
               ))}
             </div>
           )}
@@ -98,35 +108,35 @@ const Header = () => {
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-4">
         <Ripples>
-          <Link href="/" className="text-sm hover:bg-stone-600 hover:p-2 p-2 hover:rounded-md font-medium text-primary hover:text-primary-500 underline underline-offset-4 hover:decoration-lime-600 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+          <Link href="/" className="text-sm hover:bg-stone-600 hover:p-2 p-2 hover:rounded-md font-medium underline underline-offset-4 hover:underline-offset-8 hover:decoration-lime-600 text-gray-400 hover:text-gray-100 transition-colors">
             Home
           </Link>
         </Ripples>
           <div className="relative group">
         <Ripples>
-            <button onClick={toggleCategories} className="flex text-sm hover:bg-stone-600 hover:p-2 p-2 hover:rounded-md font-medium text-primary hover:text-primary-500 hover:decoration-lime-600 underline underline-offset-4 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+            <button onClick={toggleCategories} className="flex text-sm hover:bg-stone-600 hover:p-2 p-2 hover:rounded-md font-medium hover:decoration-lime-600 underline underline-offset-4 hover:underline-offset-8 text-gray-400 hover:text-gray-100 transition-colors">
               Categories
               {categoriesOpen ? <FaChevronUp className="h-3 w-3 m-1 ml-2 text-lime-500" /> : <FaChevronDown className="h-3 w-3 m-1 ml-2 text-gray-300" />}
             </button>
           </Ripples>
             {categoriesOpen && (
-              <div className="absolute flex top-12 right-1 dark:bg-stone-600 divide-x divide-lime-500 outline outline-1 outline-white border-2 border-stone-600 rounded-2xl drop-shadow shadow-xl">
+              <div className="absolute flex top-12 right-1 bg-stone-600 divide-x divide-lime-500 outline outline-1 outline-white border-2 border-stone-600 rounded-2xl drop-shadow shadow-xl">
                 <Ripples>
-                <Link href="/mens-clothing" className="flex px-2 py-2 text-sm dark:text-gray-300 hover:text-white dark:hover:bg-lime-600 hover:rounded-l-2xl">
+                <Link href="/mens-clothing" className="flex px-2 py-2 text-sm text-gray-300 hover:text-white hover:bg-lime-600 hover:rounded-l-2xl">
                   Men&apos;s Clothing
                 </Link>
                 </Ripples>
                 <Ripples>
-                <Link href="/womens-clothing" className="flex px-2 py-2 text-sm dark:text-gray-300 hover:text-white dark:hover:bg-lime-600">
+                <Link href="/womens-clothing" className="flex px-2 py-2 text-sm text-gray-300 hover:text-white hover:bg-lime-600">
                   Women&apos;s Clothing
                 </Link>
                 </Ripples>
                 <Ripples>
-                <Link href="/electronics" className="flex px-2 pr-8 pt-4 text-sm dark:text-gray-300 hover:text-white dark:hover:bg-lime-600">
+                <Link href="/electronics" className="flex px-2 pr-8 pt-4 text-sm text-gray-300 hover:text-white hover:bg-lime-600">
                   Electronics
                 </Link>
                 </Ripples>
-                <Ripples className='flex pl-2 pr-5  pt-4 text-sm dark:text-gray-300 cursor-pointer hover:text-white dark:hover:bg-lime-600 hover:rounded-r-2xl'>
+                <Ripples className='flex pl-2 pr-5  pt-4 text-sm text-gray-300 cursor-pointer hover:text-white hover:bg-lime-600 hover:rounded-r-2xl'>
                 <Link href="/jewelery">
                   Jewelery 
                 </Link>
@@ -165,19 +175,19 @@ const Header = () => {
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ease-in-out ${categoriesOpen ? 'max-h-96' : 'max-h-0'}`}>
                   <div className='bg-stone-800 border border-gray-100 mt-2 divide-y rounded-md divide-solid divide-gray-600'>
-                  <Link href="/mens-clothing" className="flex justify-around block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300 hover:rounded-t-md">
+                  <Link href="/mens-clothing" className="flex justify-around block px-4 py-2 text-sm text-gray-400 hover:bg-gray-900 hover:text-gray-300 hover:rounded-t-md">
                   <FaMale className=' h-5 w-6 left-0 text-gray-400'/>
                     Men&apos;s Clothing
                   </Link>
-                  <Link href="/womens-clothing" className="flex justify-around block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300">
+                  <Link href="/womens-clothing" className="flex justify-around block px-4 py-2 text-sm text-gray-400 hover:bg-gray-900 hover:text-gray-300">
                   <FaFemale className='h-5 w-6 left-0 text-gray-400'/>
                     Women&apos;s Clothing
                   </Link>
-                  <Link href="/electronics" className="flex justify-evenly block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300">
+                  <Link href="/electronics" className="flex justify-evenly block px-4 py-2 text-sm text-gray-400 hover:bg-gray-900 hover:text-gray-300">
                   <FcElectronics className='h-5 w-6 left-0'/> 
                     Electronics
                   </Link>
-                  <Link href="/jewelery" className="flex justify-evenly block px-4 py-2 text-sm dark:text-gray-400 hover:bg-gray-900 hover:text-gray-300 hover:rounded-b-md">
+                  <Link href="/jewelery" className="flex justify-evenly block px-4 py-2 text-sm text-gray-400 hover:bg-gray-900 hover:text-gray-300 hover:rounded-b-md">
                   <GiDiamondRing className='h-5 w-6 left-0 text-gray-400'/> 
                     Jewelery
                   </Link>

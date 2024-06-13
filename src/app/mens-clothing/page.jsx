@@ -56,7 +56,7 @@ const MensClothing = () => {
         {loading ? ( // Conditional rendering based on loading state
           // Skeleton loader while loading
           Array.from({ length: 16 }).map((_, index) => (
-            <div key={index} className=" dark:bg-stone-600 p-1 md:rounded-2xl rounded-lg shadow-lg">
+            <div key={index} className="bg-stone-600 p-1 md:rounded-2xl rounded-lg shadow-lg">
                   <div className="w-full h-60 bg-gray-300 animate-pulse mb-2"></div>
                   <div className="h-6 bg-gray-300 animate-pulse mb-2"></div>
                   <div className="h-6 bg-gray-300 animate-pulse"></div>
@@ -77,7 +77,7 @@ const MensClothing = () => {
                </div>
                 <h2 className="text-md font-semibold px-1 mt-4 mb-4">{product.title}</h2>
                 <h5 className='text-indigo-900 px-1 font-semibold text-base underline decoration-pink-600 mb-2'>Product Description</h5>
-                <p className="dark:text-blue-900 px-1 text-sm overflow-hidden display-inline">{product.description}</p>
+                <p className="text-blue-900 px-1 text-sm overflow-hidden display-inline">{product.description}</p>
                 <p className="text-base text-pink-700 px-1 font-semibold mt-2"><span className='mr-1 font-semibold text-base text-stone-800'>Price </span>${product.price}</p>
               
             </Link>
